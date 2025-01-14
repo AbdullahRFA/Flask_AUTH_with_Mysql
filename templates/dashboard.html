@@ -1,0 +1,33 @@
+{% extends 'app.html' %} {% block content %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header text-center bg-primary text-white">
+          <h4>Welcome to the Dashboard</h4>
+        </div>
+        <div class="card-body">
+          {% if user %}
+          <h5 class="mb-4">User Information</h5>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>Name:</strong> {{ user[1] }}
+            </li>
+            <li class="list-group-item">
+              <strong>Email:</strong> {{ user[2] }}
+            </li>
+          </ul>
+          <div class="mt-4 text-center">
+            <a href="/logout" class="btn btn-danger">Logout</a>
+          </div>
+          {% else %}
+          <p>No user information available.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'app.html' %} {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h2>Welcome to the Home Page</h2>
+      <p>Explore the features of the site by logging in or registering.</p>
+
+      {% if 'user_id' in session %}
+      <p>You are logged in!</p>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-primary"
+        >Go to Dashboard</a
+      >
+      {% else %}
+      <p>
+        You are not logged in.
+        <a href="{{ url_for('login') }}" class="btn btn-info">Login</a> or
+        <a href="{{ url_for('register') }}" class="btn btn-success">Register</a>
+        to continue.
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
