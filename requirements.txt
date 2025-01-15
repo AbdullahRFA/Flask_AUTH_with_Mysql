@@ -1,2 +1,5 @@
 flask
 flask-wtf
+bcrypt
+mysql.connector
+wtforms
